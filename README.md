@@ -1,96 +1,104 @@
-<a href="https://demo-nextjs-with-supabase.vercel.app/">
-  <img alt="Next.js and Supabase Starter Kit - the fastest way to build apps with Next.js and Supabase" src="https://demo-nextjs-with-supabase.vercel.app/opengraph-image.png">
-  <h1 align="center">Next.js and Supabase Starter Kit</h1>
-</a>
+# HNA (HackerNews Analyzer)
 
-<p align="center">
- The fastest way to build apps with Next.js and Supabase
-</p>
+A powerful tool that analyzes HackerNews comments to identify micro-SaaS opportunities and pain points using AI. It helps entrepreneurs discover niche problems and validate business ideas through real user feedback.
 
-<p align="center">
-  <a href="#features"><strong>Features</strong></a> ·
-  <a href="#demo"><strong>Demo</strong></a> ·
-  <a href="#deploy-to-vercel"><strong>Deploy to Vercel</strong></a> ·
-  <a href="#clone-and-run-locally"><strong>Clone and run locally</strong></a> ·
-  <a href="#feedback-and-issues"><strong>Feedback and issues</strong></a>
-  <a href="#more-supabase-examples"><strong>More Examples</strong></a>
-</p>
-<br/>
+## Core Features
 
-## Features
+- **Comment Analysis**
+  - Direct text input or website URL processing
+  - AI-powered analysis of user pain points
+  - Sentiment analysis for each topic
+  - Example comments for context
 
-- Works across the entire [Next.js](https://nextjs.org) stack
-  - App Router
-  - Pages Router
-  - Middleware
-  - Client
-  - Server
-  - It just works!
-- supabase-ssr. A package to configure Supabase Auth to use cookies
-- Styling with [Tailwind CSS](https://tailwindcss.com)
-- Components with [shadcn/ui](https://ui.shadcn.com/)
-- Optional deployment with [Supabase Vercel Integration and Vercel deploy](#deploy-your-own)
-  - Environment variables automatically assigned to Vercel project
+- **Market Analysis**
+  - Micro-SaaS opportunity identification
+  - Competitor analysis
+  - Market size estimation
+  - Growth potential assessment
+  - Key differentiators
+  - Implementation challenges
 
-## Demo
+- **Project Generation**
+  - One-click project setup with Bolt.DIY
+  - Pre-configured Next.js + Shadcn UI template
+  - Automated technical implementation
 
-You can view a fully working demo at [demo-nextjs-with-supabase.vercel.app](https://demo-nextjs-with-supabase.vercel.app/).
+- **Analysis Management**
+  - Save and organize multiple analyses
+  - Generate descriptive titles
+  - Easy deletion and updates
+  - Search through saved analyses
 
-## Deploy to Vercel
+## Getting Started
 
-Vercel deployment will guide you through creating a Supabase account and project.
-
-After installation of the Supabase integration, all relevant environment variables will be assigned to the project so the deployment is fully functioning.
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-supabase&project-name=nextjs-with-supabase&repository-name=nextjs-with-supabase&demo-title=nextjs-with-supabase&demo-description=This+starter+configures+Supabase+Auth+to+use+cookies%2C+making+the+user%27s+session+available+throughout+the+entire+Next.js+app+-+Client+Components%2C+Server+Components%2C+Route+Handlers%2C+Server+Actions+and+Middleware.&demo-url=https%3A%2F%2Fdemo-nextjs-with-supabase.vercel.app%2F&external-id=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-supabase&demo-image=https%3A%2F%2Fdemo-nextjs-with-supabase.vercel.app%2Fopengraph-image.png)
-
-The above will also clone the Starter kit to your GitHub, you can clone that locally and develop locally.
-
-If you wish to just develop locally and not deploy to Vercel, [follow the steps below](#clone-and-run-locally).
-
-## Clone and run locally
-
-1. You'll first need a Supabase project which can be made [via the Supabase dashboard](https://database.new)
-
-2. Create a Next.js app using the Supabase Starter template npx command
-
+1. Clone the repository
    ```bash
-   npx create-next-app -e with-supabase
+   git clone <repository-url>
+   cd my-app
    ```
 
-3. Use `cd` to change into the app's directory
-
+2. Install dependencies
    ```bash
-   cd name-of-new-app
+   npm install
    ```
 
-4. Rename `.env.example` to `.env.local` and update the following:
-
+3. Set up environment variables
+   Create a `.env.local` file with:
    ```
-   NEXT_PUBLIC_SUPABASE_URL=[INSERT SUPABASE PROJECT URL]
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=[INSERT SUPABASE PROJECT API ANON KEY]
+   OPENAI_API_KEY=your_key_here
+   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
    ```
 
-   Both `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` can be found in [your Supabase project's API settings](https://app.supabase.com/project/_/settings/api)
-
-5. You can now run the Next.js local development server:
-
+4. Start the development servers
    ```bash
-   npm run dev
+   # Start both main app and Bolt.DIY
+   npm run dev:all
    ```
 
-   The starter kit should now be running on [localhost:3000](http://localhost:3000/).
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-6. This template comes with the default shadcn/ui style initialized. If you instead want other ui.shadcn styles, delete `components.json` and [re-install shadcn/ui](https://ui.shadcn.com/docs/installation/next)
+## How to Use
 
-> Check out [the docs for Local Development](https://supabase.com/docs/guides/getting-started/local-development) to also run Supabase locally.
+1. **Create New Analysis**
+   - Click "New Analysis"
+   - Choose input method:
+     - Paste text directly
+     - Enter website URL for processing
+   - Click "Analyze"
 
-## Feedback and issues
+2. **View Analysis Results**
+   - Pain points with sentiment scores
+   - Example comments for each topic
+   - Potential micro-SaaS ideas
+   - Overall sentiment analysis
 
-Please file feedback and issues over on the [Supabase GitHub org](https://github.com/supabase/supabase/issues/new/choose).
+3. **Explore Market Opportunities**
+   - Click on any identified idea
+   - View detailed market analysis
+   - See similar existing solutions
+   - Understand market size and growth
 
-## More Supabase examples
+4. **Generate Implementation**
+   - Click "Open in Bolt" for any idea
+   - Wait for template to clone
+   - Paste the auto-copied prompt
+   - Get AI-guided implementation
 
-- [Next.js Subscription Payments Starter](https://github.com/vercel/nextjs-subscription-payments)
-- [Cookie-based Auth and the Next.js 13 App Router (free course)](https://youtube.com/playlist?list=PL5S4mPUpp4OtMhpnp93EFSo42iQ40XjbF)
-- [Supabase Auth and the Next.js App Router](https://github.com/supabase/supabase/tree/master/examples/auth/nextjs)
+## Technologies Used
+
+- **Frontend**
+  - Next.js 14 with App Router
+  - React
+  - Shadcn UI
+  - TailwindCSS
+  - TypeScript
+
+- **Backend & Services**
+  - Supabase for data storage
+  - OpenAI GPT-4 for analysis
+  - Bolt.DIY for implementation
+
+## License
+
+MIT
